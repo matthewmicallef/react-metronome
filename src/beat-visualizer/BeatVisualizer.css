@@ -1,0 +1,76 @@
+.beat-container {
+	width:266px;
+	height:266px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position:relative;
+	color: black;
+	margin: 49px;
+}
+
+.beat-value {
+	width: 132px;
+	height: 132px;
+	margin: 51px;
+	border-radius: 50%;
+	background-color: rgb(100, 188, 164);
+	line-height: 5.5em;
+	font-size: 24px;
+	margin: auto;
+	z-index: 2;
+}
+
+.beat {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	border-radius:50%;
+	transform: translate(-50%, -50%);
+	animation-delay: 0s;
+	animation-timing-function: ease-in-out;
+	background-color: rgb(100, 188, 164);
+}
+
+@keyframes beat {
+	0% {
+		width: 0px;
+		height: 0px;
+		opacity:1;
+	}
+	
+	
+	100% {
+		width: 100%;
+		height: 100%;
+		opacity:0;
+	}
+}
+
+.beat-72 {
+	animation: beat 0.83s infinite;
+	animation-delay: 0s;
+	animation-timing-function: ease-in-out;
+}
+
+.beat-74 {
+	animation: beat 0.81s infinite;
+}
+
+.beat-82 {
+	animation: beat 0.73s infinite;
+}
+
+.beat-84 {
+	animation: beat 0.71s infinite;
+}
+
+.beat-128 {
+	animation: beat 0.47s infinite;
+}
+
+.beat-138 {
+	animation: beat 0.43s infinite;
+}

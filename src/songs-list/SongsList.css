@@ -1,0 +1,17 @@
+.songs-list {
+  margin-top: 32px;
+}
+
+.songs-title,
+.songs-description {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.songs-title {
+  color: rgb(142, 172, 255);
+}
+
+.songs-description {
+  margin-top: 10px;
+}
