@@ -28,8 +28,6 @@ const SONGS_LIST = [
 	["Shape of You", "Ed Sheeran", 96]
 ];
 
-
-
 class SongsList extends React.Component<SongsListProps, SongsListState> {
 
 	constructor(props: SongsListProps) {
