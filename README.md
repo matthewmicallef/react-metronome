@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Metronome App 
 
-## Available Scripts
+A React application that illustrates a metronome and different BPM choices, that also present several songs that have the chosen tempo. The application also provides sounds for the different beats chosen.
 
-In the project directory, you can run:
+Once loaded, simply press the PLAY button to launch the metronome and select any beat you like. Additional beat visualizations have also been added to the original design.
 
-### `yarn start`
+Technologies used: React, TypeScript, and CSS.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Note: The play button was introduced due to limitations from browsers like Chrome where the autoplay feature is no longer supported in the same way as before, and requires user interaction first.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation and Setup Instructions
 
-### `yarn test`
+Clone this repository and `cd` into the project repository (`cd react-metronome`). You will need `node` and `npm` or `yarn` installed globally on your machine.  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Installation:
 
-### `yarn build`
+`npm install` or `yarn install`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To Start Server (run the app):
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`npm start` or `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To Visit App (launches automatically):
 
-### `yarn eject`
+`localhost:3000/`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Possible Improvements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Investigate the implementation of a more accurate interval mechanism for the beat calculation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Retrieve more song choices from public APIs. Note: Tried looking for free, publicly available APIs, but at the time of writing didn't really find any of them that allow querying by tempo/bpm.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Add and update tests.
