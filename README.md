@@ -1,6 +1,6 @@
 ## React Metronome App 
 
-A React application that illustrates a metronome and different BPM choices, that also present several songs that have the chosen tempo. The application also provides sounds for the different beats chosen.
+A React metronome application that allows the user to choose a BPM (tempo) choice and presents several songs that have the chosen tempo. The application also provides sounds for the different beats chosen.
 
 Once loaded, simply press the PLAY button to launch the metronome and select any beat you like. Additional beat visualizations have also been added to the original design.
 
