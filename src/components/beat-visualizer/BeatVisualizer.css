@@ -1,3 +1,16 @@
+.beat {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	border-radius:50%;
+	transform: translate(-50%, -50%);
+	animation-delay: 0s;
+	animation-timing-function: ease-in-out;
+	background-color: rgb(100, 188, 164);
+}
+
 .beat-container {
 	width:266px;
 	height:266px;
@@ -6,7 +19,7 @@
 	justify-content: center;
 	position:relative;
 	color: black;
-	margin: 49px;
+	margin: 49px auto 0px;
 }
 
 .beat-value {
@@ -21,17 +34,38 @@
 	z-index: 2;
 }
 
-.beat {
-	width:200px;
-	height:200px;
-	position:absolute;
-	left:50%;
-	top:50%;
-	border-radius:50%;
-	transform: translate(-50%, -50%);
+.beat-play-btn {
+	cursor: pointer;
+}
+
+.beat-circles-container {
+	margin: 10px auto 49px;
+}
+
+.beat-circle {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: 0 10px;
+	background-color: #352857;
+	border-radius: 50%;
+}
+
+@keyframes beatCircle {
+	0% {
+		transform: scale(1);
+	}
+	
+	100% {
+		transform: scale(1.5);
+	}
+}
+
+.beat-circle-active {
+	background-color: #247B7B;
+	animation: beatCircle 0.6s infinite;
 	animation-delay: 0s;
 	animation-timing-function: ease-in-out;
-	background-color: rgb(100, 188, 164);
 }
 
 @keyframes beat {
@@ -40,7 +74,6 @@
 		height: 0px;
 		opacity:1;
 	}
-	
 	
 	100% {
 		width: 100%;
@@ -51,8 +84,6 @@
 
 .beat-72 {
 	animation: beat 0.83s infinite;
-	animation-delay: 0s;
-	animation-timing-function: ease-in-out;
 }
 
 .beat-74 {

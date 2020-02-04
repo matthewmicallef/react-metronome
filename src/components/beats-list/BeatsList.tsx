@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BeatsList.css";
 
 type BeatsListProps = {
@@ -8,14 +8,14 @@ type BeatsListProps = {
 }
 
 const BeatsList: React.FunctionComponent<BeatsListProps> = props => {
-	let activeBeat = props.firstActiveBeat;
+	const [activeBeat, setActiveBeat] = useState<number>(props.firstActiveBeat);
 
 	const handleBeatClicked = (beat: number) => {
 		if (activeBeat === beat) {
 			return;
 		}
 
-		activeBeat = beat;
+		setActiveBeat(beat);
 		props.clickHandler(beat);
 	}
 
@@ -25,7 +25,9 @@ const BeatsList: React.FunctionComponent<BeatsListProps> = props => {
 				props.beatsList.map(beat =>
 					<p className={`beat-choice-btn ${activeBeat === beat ? 'beat-choice-btn-selected' : ''}`}
 						key={beat}
-						onClick={() => handleBeatClicked(beat)}>{beat} BPM</p>
+						onClick={() => handleBeatClicked(beat)}>
+						{beat} BPM
+					</p>
 				)
 			}
 		</div>

@@ -39,8 +39,7 @@ class Metronome extends React.Component<{}, MetronomeState> {
   }
 
   startPlaying() {
-    this.setState({ isPlaying: true });
-    this.handleBeatChange(this.state.activeBeat);
+    this.setState({ isPlaying: true }, this.handleBeatChange);
   }
 
   playBeat() {
@@ -58,15 +57,18 @@ class Metronome extends React.Component<{}, MetronomeState> {
     }));
   }
 
-  handleBeatChange(beat: number) {
-    this.setState({
-      beatCount: 0,
-      activeBeat: beat
+  handleBeatChange(beat?: number) {
+    if (beat)
+      this.setState({ activeBeat: beat });
+
+    if (!this.state.isPlaying) {
+      return;
+    }
+
+    this.setState({ beatCount: 0 }, () => {
+      clearInterval(this.timer);
+      this.timer = setInterval(this.playBeat.bind(this), (60 / this.state.activeBeat) * 1000);
     });
-
-    clearInterval(this.timer);
-
-    this.timer = setInterval(this.playBeat.bind(this), (60 / beat) * 1000);
   }
 
   render() {
@@ -75,11 +77,12 @@ class Metronome extends React.Component<{}, MetronomeState> {
         <p className="title">DIGITAL METRONOME</p>
 
         <BeatVisualizer beat={this.state.activeBeat}
+          beatCount={this.state.beatCount + 1}
           isPlaying={this.state.isPlaying}
           onPlayClicked={this.startPlaying.bind(this)}>
         </BeatVisualizer>
 
-        <BeatsList firstActiveBeat={this.state.activeBeat}
+        <BeatsList firstActiveBeat={this.state.beatsList[0]}
           beatsList={this.state.beatsList}
           clickHandler={this.handleBeatChange.bind(this)}>
         </BeatsList>
