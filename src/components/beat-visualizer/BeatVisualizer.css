@@ -6,8 +6,6 @@
 	top:50%;
 	border-radius:50%;
 	transform: translate(-50%, -50%);
-	animation-delay: 0s;
-	animation-timing-function: ease-in-out;
 	background-color: rgb(100, 188, 164);
 }
 
