@@ -35,7 +35,9 @@ class Metronome extends React.Component<{}, MetronomeState> {
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
   }
 
   startPlaying() {
@@ -66,7 +68,9 @@ class Metronome extends React.Component<{}, MetronomeState> {
     }
 
     this.setState({ beatCount: 0 }, () => {
-      clearInterval(this.timer);
+      if (this.timer) {
+        clearInterval(this.timer);
+      }
       this.timer = setInterval(this.playBeat.bind(this), (60 / this.state.activeBeat) * 1000);
     });
   }

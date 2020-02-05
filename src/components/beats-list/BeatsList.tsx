@@ -4,7 +4,7 @@ import "./BeatsList.css";
 type BeatsListProps = {
 	firstActiveBeat: number;
 	beatsList: number[];
-	clickHandler: (x: any) => void;
+	clickHandler: (x: number) => void;
 }
 
 const BeatsList: React.FunctionComponent<BeatsListProps> = props => {
