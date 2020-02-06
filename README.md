@@ -1,8 +1,14 @@
 ## React Metronome App 
 
-A React metronome application that allows the user to choose a BPM (tempo) choice and presents several songs that have the chosen tempo. The application also provides sounds for the different beats chosen.
+A React metronome responsive application that allows the user to choose a BPM (tempo) choice and presents several songs that have the chosen tempo. The application also provides sound animation for the different beats chosen.
 
-Once loaded, simply press the PLAY button to launch the metronome and select any beat you like. Additional beat visualizations have also been added to the original design.
+Once loaded, simply press the PLAY button to launch the metronome and select any beat you like.
+
+Optional features implemented: 
+
+- An option/link at the bottom of the songs list, enables Spotify API communication for different song suggestions.
+
+- Additional beat visualizations have been added to the original design.
 
 Technologies used: React, TypeScript, and CSS.
 
@@ -17,6 +23,8 @@ Installation:
 `npm install` or `yarn install`
 
 To Start Server (run the app):
+
+Note: It is important that the app is run on `localhost: 3000` which is the default port. This is because the Spotify settings are set to callback the same URL.
 
 `npm start` or `yarn start`
 

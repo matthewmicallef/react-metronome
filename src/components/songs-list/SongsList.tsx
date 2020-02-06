@@ -3,6 +3,8 @@ import "./SongsList.css";
 
 type SongsListProps = {
 	beat: number;
+	useSpotify?: boolean;
+	songsList?: string[];
 }
 
 type SongData = [string, string, number];
@@ -14,24 +16,27 @@ const SongsList: React.FunctionComponent<SongsListProps> = props => {
 	const [songsList, setSongsList] = useState<SongsList>([]);
 
 	useEffect(() => {
+		if (props.useSpotify)
+			return;
+
 		fetch("./data/bpm.json")
 			.then(res => res.json())
 			.then(response => {
 				setSongsList(response);
 			})
 			.catch(err => {
-				console.log(err);
+				console.error(err);
 			});
-	}, []);
+	}, [props.useSpotify]);
 
 	useEffect(() => {
 		const filterSongs = (beat: number) => {
 			setCurrentSongs([]);
-	
+
 			if (!songsList) {
 				return;
 			}
-	
+
 			let currentSongsTemp: string[] = [];
 			songsList
 				.filter(songItem => songItem[songItem.length - 1] === beat)
@@ -39,12 +44,18 @@ const SongsList: React.FunctionComponent<SongsListProps> = props => {
 					currentSongsTemp = [...currentSongsTemp, `${songItem[0]} (${songItem[1]})`];
 					return true;
 				});
-	
+
 			setCurrentSongs(currentSongsTemp);
 		};
-		
-		filterSongs(props.beat);
-	}, [songsList, props.beat]);
+
+		if (!props.useSpotify) {
+			filterSongs(props.beat);
+			return;
+		}
+
+		if (props.songsList)
+			setCurrentSongs(props.songsList);
+	}, [songsList, props]);
 
 	return (
 		<div className="songs-list">
